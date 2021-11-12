@@ -15,14 +15,13 @@ With this network model we will tell a data story about the bi-directional frequ
 ## Research Questions
 With some [preliminary analysis](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/descriptive_statistics.ipynb), we found that 13% of the quotations are uttered by politicians. And 48% of the political quotations are from the US. With the rich political data in the dataset, we decide to analyze the network between politicians through their quotation and tell a datastory about the ecosystem of the political world focusing on the United States.
 
-
-
 With Quotebank, we plan to extract the “mentioning” and “being mentioned” relationship among the politicians to build a political social network based on data from multiple news sources. This social network can be constructed on the domestic level including only American politicians and on the global level to show both the domestic and international network. One possible US political network is illustrated below, where blue and red color represent the two major parties in US and green nodes represents politician from others like Tea party.
 <p align="center">
  <img src="network_scheme.png" alt="illustration" style="width:300px;"/>
 </P>
 
 The network can visulize the polarization of the United States political structure. The two major contemporary parties, namely the Republican Party and the Democratic Party are reported to be even more divided now (NW et al., 2014; Wilson et al., 2020). On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, the US-China trade war, COVID pandemic, etc., which could be interesting to see if it is reflected from the Global political network.
+
  
 ## Proposed additional datasets
 - [Partisan Audience Bias Scores](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QAN5VX) (Robertson et al., 2018)
