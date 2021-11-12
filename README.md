@@ -1,5 +1,5 @@
 # CS-401 Applied Data Analysis Project
-## U_Cite: an interactive network for American politician landscapes
+## U_Cite: an interactive website for American politician landscapes inferred from citations
  
 ## Team: Date A Data
 - Castiglione Thomas `thomas.castiglione@epfl.ch`
@@ -8,7 +8,6 @@
 - Irvin Mero `irvin.merozambrano@epfl.ch`
  
 ## Abstract:
-*A 150 word description of the project idea and goals. What’s the motivation behind your project? What story would you like to tell, and why?*
 It is well-known from public sentiment that the US has a bi-polar political landscape, with Democrats on one side and Republicans on the other. The project aims to verify and back up this assumption with quotebank data by visualizing the political landscape in a network model in which the individual politicians are considered as nodes and the mentions in between the politicians are considered as connections. The network connections will be analyzed in-depth to reveal the structure of central nodes and communities/hubs. The network will also be extended with machine learning techniques including sentiment analysis (supervised) and LDA topic clustering (unsupervised) to reveal more information (emotion and recurrent topics) in the mentions.
  
 With this network model we will tell a data story about the bi-directional frequency, sentiment and topics when US politicians mention other politicians (self-mentions, US or world-wide). In particular, we will mention interesting conclusions and facts found with the help of interactive graphs with the network.
@@ -33,14 +32,14 @@ With Quotebank, we plan to extract the “mentioning” and “being mentioned�
     Wikidata is a free, structured database that serves as a general collection of knowledge. It is used to enrich the speakers in quotebank to include information like position, political party, nationality, date of death, etc. The size of the whole dump is over 100 GB and one query on it takes about 12 hours but we think it is manageable since it is needed to go through the whole dataset just once and the following analysis is done on much smaller subsets.
  
 ## Methods
-The general pipeline of the project is [here](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/Project%20Pipeline.ipynb)
+The general pipeline of the project is [here](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/Project%20Pipeline.ipynb).
  
 ### A. Preprocessing:
 1. Analyze the latest wikidata dump, build a catalogue by filtering out alive politicians with their qids, names, alternative names, nationalities and parties.
 2. Use the catalogue to filter the Quotebank quotations from 2015 to 2020, which were uttered by US politicians with known names and parties.
 3. Calibrate the source of quotations according to the media bias score to have a neutral sampling.
 4. Cluster the politicians in two ways, i.e. by their parties (national) and by their nationality (international).
-5. Query the filtered quotebank data and pick out the quotation lines which include the aliases of another politician(s).>>>>>>>
+5. Query the filtered quotebank data and pick out the quotation lines which include the aliases of another politician(s).
 ### B. Data analysis:
  
 1. Build a network model with following structures. Nodes are US politicians and edges are the mentioning or being mentioned in publicity (represented by the quotebank). The edge weight denotes the count of mentions and depending on the complexity for a clear diagram, only the top nodes with most connections are kept.
@@ -71,5 +70,4 @@ Final check and submission - 17 Dec
  
  
 ## Questions for TAs (optional)
-* Do you think we have adequate/too few/too much workload for our proposal? Is there anything you recommend us to add/remove?
-* Is it possible to get 6.0 with the current project schema?
+* Do you think we have adequate/too few/too much workload for our proposal? Is there anything you recommend us to add/remove? Is it possible to get a good grade (6.0) with everything done in the current project schema?
