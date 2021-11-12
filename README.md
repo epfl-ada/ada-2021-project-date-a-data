@@ -1,12 +1,21 @@
-# CS-401 Applied Data Analysis Project
-## U_Cite: Interactive American politician network inferred from public quotations  
+# U_Cite: American politician network inferred from public quotations  
  
 ## Team: Date A Data
 - Castiglione Thomas `thomas.castiglione@epfl.ch`
 - Chuanfang Ning `chuangfang.ning@epfl.ch`
 - Guoyuan Liu `guoyuan.liu@epfl.ch`
 - Irvin Mero `irvin.merozambrano@epfl.ch`
- 
+
+## Files for Milestone2
+main scripts:
+- `Project Pipeline.ipynb`: general processing pipeline of the project with demonstrations.
+- `descriptive_statistics.ipynb`: preprocessing of the raw data and descriptive statistics on the pre-processed data to support our analysis.
+
+utility:
+- `Politician Filter.ipynb`: filter politician from wikidata dump.
+- `Dumped_data_interpretation.ipynb`: identify politicians in Quotebank speakers.
+- `filter_quotations.ipynb`: filters the whole Quotebank dataset to keep only quotes uttered by politicians
+- `quote_parsing.ipynb`: identify mentions to other politician in the politicians quotations.
 ## Abstract:
 It is well-known from public sentiment that the US has a bi-polar political landscape, with Democrats on one side and Republicans on the other. The project aims to verify and back up this assumption with quotebank data by visualizing the political landscape in a network model in which the individual politicians are considered as nodes and the mentions in between the politicians are considered as connections. The network connections will be analyzed in-depth to reveal the structure of central nodes and communities/hubs. The network will also be extended with machine learning techniques including sentiment analysis (supervised) and LDA topic clustering (unsupervised) to reveal more information (emotion and recurrent topics) in the mentions.
  
