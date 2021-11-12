@@ -13,7 +13,7 @@ It is well-known from public sentiment that the US has a bi-polar political land
 With this network model we will tell a data story about the bi-directional frequency, sentiment and topics when US politicians mention other politicians (self-mentions, US or world-wide). In particular, we will mention interesting conclusions and facts found with the help of interactive graphs with the network.
  
 ## Research Questions
-With some [preliminary analysis](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/Descriptive%20Analysis.ipynb), we found that 13% of the quotations are uttered by politicians. And 48% of the political quotations are from the US. With the rich political data in the dataset, we decide to analyze the network between politicians through their quotation and tell a datastory about the ecosystem of the political world focusing on the United States.
+With some [preliminary analysis](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/descriptive_statistics.ipynb), we found that 13% of the quotations are uttered by politicians. And 48% of the political quotations are from the US. With the rich political data in the dataset, we decide to analyze the network between politicians through their quotation and tell a datastory about the ecosystem of the political world focusing on the United States.
 It has been widely discussed about the polarization of the United States society especially in terms of the political structure. The two major contemporary parties, namely the Republican Party and the Democratic Party lie on the different ends of the spectrum, and they are reported to be even more divided now. (NW et al., 2014; Wilson et al., 2020) On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, the US-China trade war, COVID pandemic, etc. which could be reflected from the US-Global network.
 With Quotebank, we plan to extract the “mentioning” and “being mentioned” relationship among the politicians to build a political social network based on data from multiple news sources. This social network can be constructed on different levels and with different analysis, so that we can:
  
@@ -48,17 +48,17 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
 4. Extract topics with Latent Dirchlet Allocation (LDA) method implemented in `Genism` package. The quotations with mentions will need to be tokenized and unrelated words need to be removed to feed the unsupervised learning model.
  
 ### C. Visualisation and Gitpage:
-Visualize the network model in B.1 and add interactive functions like drop_down lists to select (overall/communities), zooming and tracking or untracking politicians in the graph according to their interest.
-Create a github page to show the analysis and embed the interactive plots.
- 
+1. Visualize the network model in B.1 and add interactive functions like drop_down lists to select (overall/communities), zooming and tracking or untracking politicians in the graph according to their interest.
+2. Create a github page to show the analysis, tell story and embed the interactive plots.
+
 ## Proposed timeline
  
  
-Network data processing on US and worldwide - 30 Nov
-Sentimental analysis and topic extraction - 6 Dec
-Interactive visualizations - 8 Dec
-Data story composition - 15 Dec
-Final check and submission - 17 Dec
+- Network data processing on US and worldwide - 30 Nov
+- Sentimental analysis and topic extraction - 6 Dec
+- Interactive visualizations - 8 Dec
+- Data story composition - 15 Dec
+- Final check and submission - 17 Dec
  
  
 ## Organization within the team
