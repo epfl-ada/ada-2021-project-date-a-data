@@ -14,26 +14,23 @@ With this network model we will tell a data story about the bi-directional frequ
  
 ## Research Questions
 With some [preliminary analysis](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/descriptive_statistics.ipynb), we found that 13% of the quotations are uttered by politicians. And 48% of the political quotations are from the US. With the rich political data in the dataset, we decide to analyze the network between politicians through their quotation and tell a datastory about the ecosystem of the political world focusing on the United States.
-It has been widely discussed about the polarization of the United States society especially in terms of the political structure. The two major contemporary parties, namely the Republican Party and the Democratic Party lie on the different ends of the spectrum, and they are reported to be even more divided now. (NW et al., 2014; Wilson et al., 2020) On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, the US-China trade war, COVID pandemic, etc. which could be reflected from the US-Global network.
-With Quotebank, we plan to extract the “mentioning” and “being mentioned” relationship among the politicians to build a political social network based on data from multiple news sources. This social network can be constructed on different levels and with different analysis, so that we can:
- 
-1. Visualize the political landscape of the United States by drawing the network of US politicians. The edge would denote the mentioning through quotation and the vertex would be the individual politicians. This directed graph would show us the pattern of politician connection: e.g. whether they form clusters with the party members or tend to interact more with the rivals in other parties.
-[>>>> scheme]
 
-1.1 Identify potential hubs in the social networks of politicians. This can be done by centrality analysis which could reveal the structural importance of a node (person) in the network. (Borgatti et al., 2009)
+With Quotebank, we plan to extract the “mentioning” and “being mentioned” relationship among the politicians to build a political social network based on data from multiple news sources. This social network can be constructed on the domestic level including only American politicians and on the global level to show both the domestic and international network. One possible US political network is illustrated below, where blue and red color represent the two major parties in US and green nodes represents politician from others like Tea party.
+<p align="center">
+ <img src="network_scheme.png" alt="illustration" style="width:300px;"/>
+</P>
 
-1.2 Apply sentimental analysis on the quotations to further understand the network. By classifying the quotation into positive neutral, or negative mentioning, we can obtain statistically the tone when politicians mention party members and people outside the party. Here we are assuming the tone of the whole quotation also represents the attitude towards the person. 
+The network can visulize the polarization of the United States political structure. The two major contemporary parties, namely the Republican Party and the Democratic Party are reported to be even more divided now (NW et al., 2014; Wilson et al., 2020). On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, the US-China trade war, COVID pandemic, etc., which could be interesting to see if it is reflected from the Global political network.
 
-1.3 By aggregate all the quotations between every two parties with a certain tone and apply topic extraction, we can conclude which topics are more controversial  (more negative mentions) and which are more agreed between parties (more positive mentions). 
  
 ## Proposed additional datasets
 - [Partisan Audience Bias Scores](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QAN5VX) (Robertson et al., 2018)
  
-    This data set is made available from Harvard dataverse and contains 19023 domains with the bias score. The score is compiled from the sharing patterns by known Democrats and Republicans on Twitter. The dataset also optionally contains other scores to validate the method. We plan to use the dataset to calibrate the source of quotation so that the distribution is centered and unbiased in terms of political ideology. This is relevant since we want to show an objective politician network that can reflect real situations instead of the potential bias from the media.
+    This data set is made available from Harvard dataverse and contains 19023 domains with the bias score. The score is compiled from the sharing patterns by known Democrats and Republicans on Twitter.We plan to use the dataset to calibrate the source of quotation so that the distribution is centered and unbiased in terms of political ideology. This is relevant since we want to show an objective politician network that can reflect real situations instead of the potential bias from the media.
  
 - [Wikidata](https://www.wikidata.org/wiki/Wikidata:Database_download)
 
-    Wikidata is a free, structured database that serves as a general collection of knowledge. It is used to enrich the speakers in quotebank to include information like position, political party, nationality, date of death, etc. The size of the whole dump is over 100 GB and one query on it takes about 12 hours but we think it is manageable since it is needed to go through the whole dataset just once and the following analysis is done on much smaller subsets.
+    Wikidata is a free, structured database that serves as a general collection of knowledge. It is used to enrich the speakers in quotebank to include information like position, political party, nationality, date of death, etc. The size of the whole dump is over 100 GB and one query on it takes about 12 hours but it is manageable since one pass is adequate and the following analysis is done on much smaller subsets.
  
 ## Methods
 The general pipeline of the project is [here](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/Project%20Pipeline.ipynb).
@@ -46,13 +43,13 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
 5. Query the filtered quotebank data and pick out the quotation lines which include the aliases of another politician(s).
 ### B. Data analysis:
  
-1. Build a network model with following structures. Nodes are US politicians and edges are the mentioning or being mentioned in publicity (represented by the quotebank). The edge weight denotes the count of mentions and depending on the complexity for a clear diagram, only the top nodes with most connections are kept.
-2. Do centrality analysis on the network to evaluate the importance of one nodes (politicians) based on the number of connections. 
-3. Do sentimental analysis with the `sentiment` module in `nltk` package, which is a model trained by supervised learning. The model will be applied on each quotation to have a sentiment score.
-4. Extract topics with Latent Dirchlet Allocation (LDA) method implemented in `Genism` package. The quotations with mentions will need to be tokenized and unrelated words need to be removed to feed the unsupervised learning model.
+1. Build a network model with following structures. Nodes are US politicians and edges are the mentioning or being mentioned in publicity (represented by the quotebank). The edge weight denotes the count of mentions and depending on the complexity for a clear diagram, only the top nodes with most connections are kept. This directed graph would show us the pattern of politician connection: e.g. whether they form clusters with the party members or tend to interact more with the rivals in other parties.
+2. Do centrality analysis on the network to evaluate the importance of one nodes (politicians) based on the number of connections. (Borgatti et al., 2009)
+3. Do sentimental analysis with the `sentiment` module in `nltk` package, which is a model trained by supervised learning. The model will be applied on each quotation to have a sentiment score. We can then obtain statistically the tone when politicians mention party members and people outside the party. Here we are assuming the tone of the whole quotation also represents the attitude towards the person. 
+4. Extract topics with Latent Dirchlet Allocation (LDA) method implemented in `Genism` package. The quotations with mentions will need to be tokenized and unrelated words need to be removed before feeding the unsupervised learning model. By aggregate all the quotations between every two parties with a certain tone and apply topic extraction, we can conclude which topics are more controversial  (more negative mentions) and which are more agreed between parties (more positive mentions). 
  
 ### C. Visualisation and Gitpage:
-1. Visualize the network model in B.1 and add interactive functions like drop_down lists to select (overall/communities), zooming and tracking or untracking politicians in the graph according to their interest.
+1. Visualize the network model in B.1 and add interactive functions like drop_down lists to select (overall/communities), zooming and tracking or untracking politicians in the graph according to their interest. Visualize the political landscape of the United States by drawing the network of US politicians. 
 2. Create a github page to show the analysis, tell story and embed the interactive plots.
 
 ## Proposed timeline
@@ -75,3 +72,11 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
  
 ## Questions for TAs (optional)
 * Do you think we have adequate/too few/too much workload for our proposal? Is there anything you recommend us to add/remove? Is it possible to get a good grade (6.0) with everything done in the current project schema?
+
+## References
+1. Borgatti, S. P., Mehra, A., Brass, D. J., & Labianca, G. (2009). Network Analysis in the Social Sciences. Science, 323(5916), 892–895. https://doi.org/10.1126/science.1165821
+2. NW, 1615 L. St, Washington, S. 800, & Inquiries, D. 20036 U.-419-4300 | M.-857-8562 | F.-419-4372 | M. (2014, June 12). Political Polarization in the American Public. Pew Research Center - U.S. Politics & Policy. https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/
+3. Robertson, R. E., Jiang, S., Joseph, K., Friedland, L., Lazer, D., & Wilson, C. (2018). Auditing Partisan Audience Bias within Google Search. Proceedings of the ACM on Human-Computer Interaction, 2(CSCW), 1–22. https://doi.org/10.1145/3274417
+4. Vaucher, T., Spitz, A., Catasta, M., & West, R. (2021). Quotebank: A Corpus of Quotations from a Decade of News. Proceedings of the 14th ACM International Conference on Web Search and Data Mining, 328–336. https://doi.org/10.1145/3437963.3441760
+5. Wilson, A. E., Parker, V. A., & Feinberg, M. (2020). Polarization in the contemporary political and media landscape. Current Opinion in Behavioral Sciences, 34, 223–228. https://doi.org/10.1016/j.cobeha.2020.07.005
+
