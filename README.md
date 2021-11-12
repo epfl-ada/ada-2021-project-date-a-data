@@ -16,9 +16,10 @@ With this network model we will tell a data story about the bi-directional frequ
 With some [preliminary analysis](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/descriptive_statistics.ipynb), we found that 13% of the quotations are uttered by politicians. And 48% of the political quotations are from the US. With the rich political data in the dataset, we decide to analyze the network between politicians through their quotation and tell a datastory about the ecosystem of the political world focusing on the United States.
 It has been widely discussed about the polarization of the United States society especially in terms of the political structure. The two major contemporary parties, namely the Republican Party and the Democratic Party lie on the different ends of the spectrum, and they are reported to be even more divided now. (NW et al., 2014; Wilson et al., 2020) On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, the US-China trade war, COVID pandemic, etc. which could be reflected from the US-Global network.
 With Quotebank, we plan to extract the “mentioning” and “being mentioned” relationship among the politicians to build a political social network based on data from multiple news sources. This social network can be constructed on different levels and with different analysis, so that we can:
- 
+<p align="center">
+ <img src="network_scheme.png" alt="illustration" style="width:300px;"/>
+</P>
 1. Visualize the political landscape of the United States by drawing the network of US politicians. The edge would denote the mentioning through quotation and the vertex would be the individual politicians. This directed graph would show us the pattern of politician connection: e.g. whether they form clusters with the party members or tend to interact more with the rivals in other parties.
-[>>>> scheme]
 1.1 Identify potential hubs in the social networks of politicians. This can be done by centrality analysis which could reveal the structural importance of a node (person) in the network. (Borgatti et al., 2009)
 1.2 Apply sentimental analysis on the quotations to further understand the network. By classifying the quotation into positive neutral, or negative mentioning, we can obtain statistically the tone when politicians mention party members and people outside the party. Here we are assuming the tone of the whole quotation also represents the attitude towards the person. 
 1.3 By aggregate all the quotations between every two parties with a certain tone and apply topic extraction, we can conclude which topics are more controversial  (more negative mentions) and which are more agreed between parties (more positive mentions). 
@@ -72,3 +73,11 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
  
 ## Questions for TAs (optional)
 * Do you think we have adequate/too few/too much workload for our proposal? Is there anything you recommend us to add/remove? Is it possible to get a good grade (6.0) with everything done in the current project schema?
+
+## References
+1. Borgatti, S. P., Mehra, A., Brass, D. J., & Labianca, G. (2009). Network Analysis in the Social Sciences. Science, 323(5916), 892–895. https://doi.org/10.1126/science.1165821
+2. NW, 1615 L. St, Washington, S. 800, & Inquiries, D. 20036 U.-419-4300 | M.-857-8562 | F.-419-4372 | M. (2014, June 12). Political Polarization in the American Public. Pew Research Center - U.S. Politics & Policy. https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/
+3. Robertson, R. E., Jiang, S., Joseph, K., Friedland, L., Lazer, D., & Wilson, C. (2018). Auditing Partisan Audience Bias within Google Search. Proceedings of the ACM on Human-Computer Interaction, 2(CSCW), 1–22. https://doi.org/10.1145/3274417
+4. Vaucher, T., Spitz, A., Catasta, M., & West, R. (2021). Quotebank: A Corpus of Quotations from a Decade of News. Proceedings of the 14th ACM International Conference on Web Search and Data Mining, 328–336. https://doi.org/10.1145/3437963.3441760
+5. Wilson, A. E., Parker, V. A., & Feinberg, M. (2020). Polarization in the contemporary political and media landscape. Current Opinion in Behavioral Sciences, 34, 223–228. https://doi.org/10.1016/j.cobeha.2020.07.005
+
