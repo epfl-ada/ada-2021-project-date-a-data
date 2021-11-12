@@ -1,5 +1,5 @@
 # CS-401 Applied Data Analysis Project
-## U_Cite: an interactive website for American politician landscapes inferred from citations
+## U_Cite: Interactive American politician network inferred from public quotations  
  
 ## Team: Date A Data
 - Castiglione Thomas `thomas.castiglione@epfl.ch`
@@ -20,13 +20,13 @@ With Quotebank, we can extract the “mentioning” and “being mentioned” re
  <img src="network_scheme.png" alt="illustration" style="width:300px;"/>
 </P>
 
-The polarization of the United States politics is already backed by multiple studies, but many of them is done indirectly via survey on ideology or public behavior change (NW et al., 2014; Wilson et al., 2020). The network on the individual politician level is a direct reflection of the political structure with quantitative metrics like connectivity or betweenness centrality.
+The polarization of the United States politics is already backed by multiple studies, but many of them is done indirectly via survey on ideology or public behavior change ([NW et al., 2014](https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/); [Wilson et al., 2020](https://psycnet.apa.org/record/2020-78563-040)). The network on the individual politician level is a direct reflection of the political structure with quantitative metrics like connectivity or betweenness centrality.
 
 On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, the US-China trade war, COVID pandemic, etc., which could be interesting to see if it is reflected from the global political network.
 
  
 ## Proposed additional datasets
-- [Partisan Audience Bias Scores](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QAN5VX) (Robertson et al., 2018)
+- [Partisan Audience Bias Scores](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QAN5VX)
  
     This data set is made available from Harvard dataverse and contains 19023 domains with the bias score. The score is compiled from the sharing patterns by known Democrats and Republicans on Twitter.We plan to use the dataset to calibrate the source of quotation so that the distribution is centered and unbiased in terms of political ideology. This is relevant since we want to show an objective politician network that can reflect real situations instead of the potential bias from the media.
  
@@ -46,7 +46,7 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
 ### B. Data analysis:
  
 1. Build a network model with following structures. Nodes are US politicians and edges are the mentioning or being mentioned in publicity (represented by the quotebank). The edge weight denotes the count of mentions and depending on the complexity for a clear diagram, only the top nodes with most connections are kept. This directed graph would show us the pattern of politician connection: e.g. whether they form clusters with the party members or tend to interact more with the rivals in other parties.
-2. Do centrality analysis on the network to evaluate the importance of one nodes (politicians) based on the number of connections. (Borgatti et al., 2009)
+2. Do centrality analysis on the network to evaluate the importance of one nodes (politicians) based on the number of connections ([Borgatti et al., 2009](https://www.science.org/doi/full/10.1126/science.1165821)).
 3. Do sentimental analysis with the `sentiment` module in `nltk` package, which is a model trained by supervised learning. The model will be applied on each quotation to have a sentiment score. We can then obtain statistically the tone when politicians mention party members and people outside the party. Here we are assuming the tone of the whole quotation also represents the attitude towards the person. 
 4. Extract topics with Latent Dirchlet Allocation (LDA) method implemented in `Genism` package. The quotations with mentions will need to be tokenized and unrelated words need to be removed before feeding the unsupervised learning model. By aggregate all the quotations between every two parties with a certain tone and apply topic extraction, we can conclude which topics are more controversial  (more negative mentions) and which are more agreed between parties (more positive mentions). 
  
@@ -55,8 +55,6 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
 2. Create a github page to show the analysis, tell story and embed the interactive plots.
 
 ## Proposed timeline
- 
- 
 - Network data processing on US and worldwide - 30 Nov
 - Sentimental analysis and topic extraction - 6 Dec
 - Interactive visualizations - 8 Dec
@@ -74,11 +72,3 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
  
 ## Questions for TAs (optional)
 * Do you think we have adequate/too few/too much workload for our proposal? Is there anything you recommend us to add/remove? Is it possible to get a good grade (6.0) with everything done in the current project schema?
-
-## References
-1. Borgatti, S. P., Mehra, A., Brass, D. J., & Labianca, G. (2009). Network Analysis in the Social Sciences. Science, 323(5916), 892–895. https://doi.org/10.1126/science.1165821
-2. NW, 1615 L. St, Washington, S. 800, & Inquiries, D. 20036 U.-419-4300 | M.-857-8562 | F.-419-4372 | M. (2014, June 12). Political Polarization in the American Public. Pew Research Center - U.S. Politics & Policy. https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/
-3. Robertson, R. E., Jiang, S., Joseph, K., Friedland, L., Lazer, D., & Wilson, C. (2018). Auditing Partisan Audience Bias within Google Search. Proceedings of the ACM on Human-Computer Interaction, 2(CSCW), 1–22. https://doi.org/10.1145/3274417
-4. Vaucher, T., Spitz, A., Catasta, M., & West, R. (2021). Quotebank: A Corpus of Quotations from a Decade of News. Proceedings of the 14th ACM International Conference on Web Search and Data Mining, 328–336. https://doi.org/10.1145/3437963.3441760
-5. Wilson, A. E., Parker, V. A., & Feinberg, M. (2020). Polarization in the contemporary political and media landscape. Current Opinion in Behavioral Sciences, 34, 223–228. https://doi.org/10.1016/j.cobeha.2020.07.005
-
