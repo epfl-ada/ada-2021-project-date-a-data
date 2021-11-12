@@ -19,8 +19,11 @@ With Quotebank, we plan to extract the “mentioning” and “being mentioned�
  
 1. Visualize the political landscape of the United States by drawing the network of US politicians. The edge would denote the mentioning through quotation and the vertex would be the individual politicians. This directed graph would show us the pattern of politician connection: e.g. whether they form clusters with the party members or tend to interact more with the rivals in other parties.
 [>>>> scheme]
+
 1.1 Identify potential hubs in the social networks of politicians. This can be done by centrality analysis which could reveal the structural importance of a node (person) in the network. (Borgatti et al., 2009)
+
 1.2 Apply sentimental analysis on the quotations to further understand the network. By classifying the quotation into positive neutral, or negative mentioning, we can obtain statistically the tone when politicians mention party members and people outside the party. Here we are assuming the tone of the whole quotation also represents the attitude towards the person. 
+
 1.3 By aggregate all the quotations between every two parties with a certain tone and apply topic extraction, we can conclude which topics are more controversial  (more negative mentions) and which are more agreed between parties (more positive mentions). 
  
 ## Proposed additional datasets
