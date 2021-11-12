@@ -24,11 +24,12 @@ With Quotebank, we plan to extract the “mentioning” and “being mentioned�
 1.3 By aggregate all the quotations between every two parties with a certain tone and apply topic extraction, we can conclude which topics are more controversial  (more negative mentions) and which are more agreed between parties (more positive mentions). 
  
 ## Proposed additional datasets
-- Partisan Audience Bias Scores (Robertson et al., 2018)
+- [Partisan Audience Bias Scores](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QAN5VX) (Robertson et al., 2018)
  
     This data set is made available from Harvard dataverse and contains 19023 domains with the bias score. The score is compiled from the sharing patterns by known Democrats and Republicans on Twitter. The dataset also optionally contains other scores to validate the method. We plan to use the dataset to calibrate the source of quotation so that the distribution is centered and unbiased in terms of political ideology. This is relevant since we want to show an objective politician network that can reflect real situations instead of the potential bias from the media.
  
-- Wikidata
+- [Wikidata](https://www.wikidata.org/wiki/Wikidata:Database_download)
+
     Wikidata is a free, structured database that serves as a general collection of knowledge. It is used to enrich the speakers in quotebank to include information like position, political party, nationality, date of death, etc. The size of the whole dump is over 100 GB and one query on it takes about 12 hours but we think it is manageable since it is needed to go through the whole dataset just once and the following analysis is done on much smaller subsets.
  
 ## Methods
