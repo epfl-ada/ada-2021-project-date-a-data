@@ -80,4 +80,4 @@ The general pipeline of the project is [here](https://github.com/epfl-ada/ada-20
  
  
 ## Questions for TAs (optional)
-* Do you think we have adequate/too few/too much workload for our proposal? Is there anything you recommend us to add/remove? Is it possible to get a good grade (6.0) with everything done in the current project schema?
+* Do you think we have adequate/too few/too much workload/features for our proposal? We have also considered analyzing the tendency in chronological order, analyzing the nodes with some more property filters(gender,religions,etc.) or doing predictions with quotaions but found it hard to integrate it into the network datastory. Is there anything you recommend us to add/remove? Is it possible to get a good grade (6.0) with everything accomplished in the current project schema?
