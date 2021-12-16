@@ -33,11 +33,11 @@ def interpret_qids(WIKI_DATA_FILTERED, Q_catalogue, WIKI_DATA_FILTERED_LABELED, 
             with pd.read_json(WIKI_DATA_FILTERED, lines=True, compression='bz2', chunksize=CHUNKSIZE) as df_reader:
                 for chunk in df_reader:
                     t1=time.time()
+                    chunk['nationality'] = chunk['nationality'].apply(single_interpret)
+                    chunk['religion'] = chunk['religion'].apply(single_interpret)
                     chunk['gender'] = chunk['gender'].apply(single_interpret)
                     chunk['parties'] = chunk['parties'].apply(list_interpret)
                     chunk['candidacy_election'] = chunk['candidacy_election'].apply(list_interpret)
-                    #chunk['religion'] = chunk['religion'].apply(list_interpret)
-                    #religion property in wikipedia is messed up with instances like churches, shrines etc. better filter this another way
                     try:
                         chunk['positions held'] = chunk['positions held'].apply(listlist_interpret)
                     except:
