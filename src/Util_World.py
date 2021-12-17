@@ -133,7 +133,7 @@ def plotly_graph_world(world,democ,repub,years,locO):
                              mode='lines+markers',
                              name='All',
                              hovertext=country.country+' freq ='+str(country.freq),
-                             line=dict(width=country.freq*10, color='blue'),
+                             line=dict(width=country.freq*10, color='dodgerblue'),
                              visible=False,
                              showlegend=False
             ))
@@ -156,7 +156,7 @@ def plotly_graph_world(world,democ,repub,years,locO):
                              mode='lines+markers',
                              name='All',
                              hovertext=country.country+' freq ='+str(country.freq),
-                             line=dict(width=country.freq*10, color='red'),
+                             line=dict(width=country.freq*10, color='tomato'),
                              visible=False,
                              showlegend=False
             ))
