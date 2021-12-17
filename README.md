@@ -12,7 +12,7 @@ It is well-known from public sentiment that the US has a bi-polar political land
 The politicians are considered as nodes and the mentions in between the politicians are considered as edges in the network model. Both the nodes and the edges of the network are analyzed to reveal the politician landscape.
 The network is analyzed in-depth to reveal the node centrality, communities and self-loops. The sentiments and topics of mentions are analyzed with machine learning method. 
 
-Files for Milestone3
+Files for Milestone3: 
 There are 2 main notebooks doing repectively preprocessing and analysis of the data.
 - `Preprocessing.ipynb`: processing pipeline from raw dataset to usable data for analysis and visualisation.
 - `Analysis.ipynb`: Analysis of the processed data from last notebook with visualisations.
@@ -25,7 +25,7 @@ With this network model we will tell a data story about the bi-directional frequ
 ## Research Questions
 With some [preliminary analysis](https://github.com/epfl-ada/ada-2021-project-date-a-data/blob/main/Milestone2/descriptive_statistics.ipynb), we found that 13% of the quotations are uttered by politicians. And 48% of the political quotations are from the US. With the rich political data in the dataset, we decide to analyze the network between politicians through their quotation and tell a datastory about the ecosystem of the political world focusing on the United States.
 
-With Quotebank, we can extract the “mentioning” and “being mentioned” relationship among the politicians to build a political social network based on data from multiple news sources. This social network can be constructed on the domestic level including only American politicians and on the global level to show both the domestic and international network. One possible US political network is illustrated below, where blue and red color represent the two major parties in US and green nodes represents politician from others like Tea party.
+With Quotebank, we can extract the “mentioning” and “being mentioned” relationship among the politicians to build a political social network based on data from multiple news sources. This social network can be constructed on the national level including only American politicians and on the global level to show both the national and international network. One possible US political network is illustrated below, where blue and red color represent Democrats and Republicans respectively.
 <p align="center">
  <img src="network_scheme.png" alt="illustration" style="width:300px;"/>
 </P>
