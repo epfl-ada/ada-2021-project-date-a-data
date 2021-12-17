@@ -36,10 +36,8 @@ With Quotebank, we can extract the “mentioning” and “being mentioned” re
 
 The polarization of the United States politics is already backed by multiple studies, but many of them is done indirectly via survey on ideology or public behavior change ([NW et al., 2014](https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/); [Wilson et al., 2020](https://psycnet.apa.org/record/2020-78563-040)). 
 
-The network on the individual politician level is a direct reflection of the political structure with quantitative metrics like centrality.
+The network on the individual politician level is a direct reflection of the political structure. With our study, quantitative metrics can be provided including PageRank centrality, community detection, topic extraction and sentiment analysis on the quotations. 
 
-
-On a global level, some major events also occur during the time span of quotebank (2015 - 2020) like Brexit, the US-China trade war, COVID pandemic, etc., which could be interesting to see if it is reflected from the global political network.
 
 ## Methods
 
