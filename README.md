@@ -1,23 +1,24 @@
 # U_Cite: American politician network inferred from public quotations  
- 
+## [Data Story](https://irvin-mero.github.io/date_a_data/)
 ## Team: Date A Data
 - Castiglione Thomas `thomas.castiglione@epfl.ch`
 - Chuanfang Ning `chuangfang.ning@epfl.ch`
 - Guoyuan Liu `guoyuan.liu@epfl.ch`
 - Irvin Mero `irvin.merozambrano@epfl.ch`
+## Introduction
+![plot](http://url/to/img.png)
+It is well-known from public sentiment that the US has a bi-polar political landscape, with Democrats on one side and Republicans on the other. The project aims to verify and back up this bi-polarity by interpreting and visualizing the political mentions of Americam politicians in a network model. 
 
-## Files for Milestone2
-main scripts:
-- `Project Pipeline.ipynb`: general processing pipeline of the project with demonstrations.
-- `descriptive_statistics.ipynb`: preprocessing of the raw data and descriptive statistics on the pre-processed data to support our analysis.
+The politicians are considered as nodes and the mentions in between the politicians are considered as edges in the network model. Both the nodes and the edges of the network are analyzed to reveal the politician landscape.
+The network is analyzed in-depth to reveal the node centrality, communities and self-loops. The sentiments and topics of mentions are analyzed with machine learning method. 
 
-utility:
-- `Politician Filter.ipynb`: filter politician from wikidata dump.
-- `Dumped_data_interpretation.ipynb`: identify politicians in Quotebank speakers.
-- `filter_quotations.ipynb`: filters the whole Quotebank dataset to keep only quotes uttered by politicians
-- `quote_parsing.ipynb`: identify mentions to other politician in the politicians quotations.
-## Abstract:
-It is well-known from public sentiment that the US has a bi-polar political landscape, with Democrats on one side and Republicans on the other. The project aims to verify and back up this assumption with quotebank data by visualizing the political landscape in a network model in which the individual politicians are considered as nodes and the mentions in between the politicians are considered as connections. The network connections will be analyzed in-depth to reveal the structure of central nodes and communities/hubs. The network will also be extended with machine learning techniques including sentiment analysis (supervised) and LDA topic clustering (unsupervised) to reveal more information (emotion and recurrent topics) in the mentions.
+Files for Milestone3
+There are 2 main notebooks doing repectively preprocessing and analysis of the data.
+- `Preprocessing.ipynb`: processing pipeline from raw dataset to usable data for analysis and visualisation.
+- `Analysis.ipynb`: Analysis of the processed data from last notebook with visualisations.
+The src folder includes the utility functions necessary for running the main notebooks.
+
+
  
 With this network model we will tell a data story about the bi-directional frequency, sentiment and topics when US politicians mention other politicians (self-mentions, US or world-wide). In particular, we will mention interesting conclusions and facts found with the help of interactive graphs with the network.
  
