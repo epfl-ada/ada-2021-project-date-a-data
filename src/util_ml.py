@@ -263,4 +263,4 @@ if __name__ == "__main__":
     model_LDA_noname.save(os.path.join(model_folder, model_prefix))
 
     print(">>> topics extracted")
-    model_LDA_noname.show_topics(num_topics=10)
+    print(model_LDA_noname.show_topics(num_topics=10))
