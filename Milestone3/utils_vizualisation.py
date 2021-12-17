@@ -148,7 +148,7 @@ def plotly_graph_self(g,Layout,labels,parties='grey',colormap='white',centrality
                 )),
             text=labels,
             textposition='top center',
-            hovertemplate='none'
+            hovertemplate=['freq: '+str(np.round(centr,3))+'<extra></extra>' for centr in centrality]
              ))
     axis=dict(showbackground=False,
             showline=False,
